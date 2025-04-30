@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>404 – Page non trouvée</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="src/output.css" rel="stylesheet" />
+
 </head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+<body class="bg-gray-50 flex flex-col items-center justify-center min-h-screen">
 
   <div class="text-center p-8 bg-white rounded-2xl shadow-lg max-w-md mx-4">
     <h1 class="text-6xl font-extrabold text-indigo-600 mb-4">404</h1>
@@ -23,6 +24,8 @@
       Retour à l’accueil
     </a>
   </div>
-
+<?php
+require_once 'layouts/footer_html.php';
+?>
 </body>
 </html>
