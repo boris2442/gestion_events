@@ -23,7 +23,7 @@
     <!-- Image -->
     <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
       <img 
-        src="https://via.placeholder.com/800x600" 
+        src="../assets/hero-image.jpg" 
         alt="Illustration événements" 
         class="w-full h-auto rounded-lg shadow-lg object-cover"
       />
