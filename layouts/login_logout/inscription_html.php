@@ -41,7 +41,7 @@
 
             <!-- Bouton -->
             <div>
-                <button type="submit"
+                <button type="submit" name="register"
                     class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
                     S’inscrire
                 </button>

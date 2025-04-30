@@ -1,5 +1,64 @@
 <?php
+session_start();
 require_once 'database/database.php';
+
+if (isset($_POST['register'])) {
+
+    $errors = [];
+
+    // Prenom-------------------------------
+    if (empty($_POST['prenom']) || preg_match("#^[a-zA-Z0-9_]+$#", $_POST['prenom'])) {
+
+        $errors['prenom'] = "prenom non valide";
+    }
+
+    // Prenom-------------------------------
+    if (empty($_POST['nom']) || preg_match("#^[a-zA-Z0-9_]+$#", $_POST['nom'])) {
+
+        $errors['nom'] = "nom non valide";
+    }
+
+    // Email---------------------------------------
+    if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = "Email non valide";
+    } else {
+
+        $query = "SELECT * FROM utilisateurs WHERE email = ?";
+        $req = $db->prepare($query);
+        $req->execute([$_POST['email']]);
+        if ($req->fetch()) {
+            $errors['email'] = "Cet email est déjà pris";
+        }
+    }
+
+    // Password-----------------------------------------
+    if (empty($_POST['password'])) {
+        $errors['password'] = "Vous devez entrer un mot de passe ";
+    } else if ($_POST['password'] !== $_POST['confirm_password']) {
+        $errors['password'] = "Votre mot de passe ne correspond pas !";
+    }
+
+    // INSERT INTO------------------------------------------
+    if (empty($errors)) {
+        $query = "INSERT INTO utilisateurs(prenom,nom,email,password) VALUES(?,?,?,?)";
+        $req = $db->prepare($query);
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+        $req->execute([$_POST['prenom'], $_POST['nom'], $_POST['email'], $password]);
+
+        // On redirige vers la page de login
+
+        // header("Location: login");
+        exit();
+    }
+}
+
+
+
+
+
+
+
 //1 afficher le titre de la page
 $pageTitle = "Inscription – EventPro";
 //2-debut du tampon de la page de sortie
@@ -11,9 +70,3 @@ $pageContent = ob_get_clean();
 //5 
 // inclure le layout de la page de sortie
 require_once 'layouts/layout_html.php';
-
-
-
-
-
-?>
