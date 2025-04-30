@@ -51,7 +51,7 @@ if (isset($_SESSION['users']['id'])) {
 
             if ($requete->execute()) {
                 // Redirection en cas de succès
-                header('location:index.php');
+                header('location:event.php');
                 exit();
             } else {
                 $errors['sql'] = "Une erreur est survenue lors de l'insertion dans la base de données.";

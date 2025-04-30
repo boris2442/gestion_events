@@ -11,7 +11,7 @@
           <p class="text-gray-700 mb-4">
             Capacité : <span class="font-medium"><?= $event['capacity'] ?></span>
           </p>
-          <a href="event.php?id=<?= urlencode($event['id_evenement']) ?>" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          <a href="evenement.php?id=<?= urlencode($event['id_evenement']) ?>" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
             Voir plus...
           </a>
         </div>

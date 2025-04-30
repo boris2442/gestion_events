@@ -2,10 +2,12 @@
 require_once 'database/database.php';
 
 //recuperation des articles dans la datyabase...
-$sql="SELECT * FROM evenements ORDER BY date_debut DESC ";
-$query = $db->prepare($sql);
-$query->execute();
-$events = $query->fetchAll(PDO::FETCH_ASSOC);
+ $sql="SELECT * FROM evenements ORDER BY date_debut DESC ";
+ $query = $db->prepare($sql);
+ $query->execute();
+ $events = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 
 
