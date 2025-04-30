@@ -14,7 +14,7 @@
                 <a href="#" class="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm sm:text-base font-medium hover:bg-indigo-700 transition">
                     Explorer les événements
                 </a>
-                <a href="#" class="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-lg text-sm sm:text-base font-medium hover:bg-indigo-50 transition">
+                <a href="create" class="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-lg text-sm sm:text-base font-medium hover:bg-indigo-50 transition">
                     Créer un événement
                 </a>
             </div>
