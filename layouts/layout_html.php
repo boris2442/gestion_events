@@ -73,7 +73,9 @@
     </div>
   </main> -->
 <?= $pageContent ?>
-
+<?php
+require_once 'footer_html.php';
+?>
   <script>
     const burgerBtn = document.getElementById('burger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
