@@ -241,6 +241,9 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-\[10vh\] {
+    margin-top: 10vh;
+  }
   .-mr-2 {
     margin-right: calc(var(--spacing) * -2);
   }
@@ -303,6 +306,12 @@
   }
   .h-auto {
     height: auto;
+  }
+  .min-h-\[80vh\] {
+    min-height: 80vh;
+  }
+  .min-h-\[screen\] {
+    min-height: screen;
   }
   .min-h-screen {
     min-height: 100vh;

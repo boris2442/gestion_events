@@ -1,6 +1,9 @@
+
+<section class="bg-gray-100 min-h-screen  flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
 <div class="bg-white shadow-lg rounded-lg w-full max-w-md mx-4 p-6 sm:p-8">
     <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-6">Se connecter</h1>
-    <form action="#" method="POST" class="space-y-5">
+    <form  method="POST" class="space-y-5">
       <!-- Email -->
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Adresse e-mail</label>
@@ -31,7 +34,8 @@
       <!-- Lien vers inscription -->
       <p class="text-center text-sm text-gray-600">
         Pas encore de compte ?
-        <a href="#" class="text-indigo-600 hover:underline">Inscrivez-vous</a>
+        <a href="inscription" class="text-indigo-600 hover:underline">Inscrivez-vous</a>
       </p>
     </form>
   </div>
+</section>
