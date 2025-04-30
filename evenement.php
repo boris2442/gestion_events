@@ -12,7 +12,7 @@ $query->execute(compact('event_id'));
 $event = $query->fetch();
 
 //recuperation des articles dans la datyabase...
-$sql="SELECT * FROM evenements ORDER BY created_at DESC ";
+$sql = "SELECT * FROM evenements ORDER BY created_at DESC ";
 $query = $db->prepare($sql);
 $query->execute();
 $events = $query->fetchAll(PDO::FETCH_ASSOC);
