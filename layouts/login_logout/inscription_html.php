@@ -10,7 +10,7 @@
         }
 
         ?>
-        <form action="#" method="POST" class="space-y-5">
+        <form  method="POST" class="space-y-5">
 
             <!-- Nom / Prénom -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

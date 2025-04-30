@@ -11,7 +11,7 @@
                     </svg>
                 </span>
                 <p class="text-gray-700 text-sm sm:text-base">
-                    <strong>Email :</strong> contact@entreprise.com
+                    <strong>Email :</strong> gestionevent@gmail.com
                 </p>
             </div>
             <div class="flex items-center space-x-4">
@@ -21,7 +21,7 @@
                     </svg>
                 </span>
                 <p class="text-gray-700 text-sm sm:text-base">
-                    <strong>Téléphone :</strong> +33 1 23 45 67 89
+                    <strong>Téléphone :</strong> +237 679 13 51 77
                 </p>
             </div>
             <div class="flex items-center space-x-4">
@@ -31,7 +31,7 @@
                     </svg>
                 </span>
                 <p class="text-gray-700 text-sm sm:text-base">
-                    <strong>Adresse :</strong> 123 Rue de l'Entreprise, 75001 Paris, France
+                    <strong>Adresse :</strong> 123 Rue de l'Entreprise, 75001 Cameroun, Bastos
                 </p>
             </div>
         </div>
