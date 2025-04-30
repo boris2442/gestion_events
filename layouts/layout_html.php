@@ -74,15 +74,9 @@
 
     </div>
   </main> -->
-    <?php
-    if (!empty($errors)) {
-        echo '<div style=" background:red; text-align:center; color:white; padding:2px 8px; font-size:25px;">'
-            . reset($errors) .
-            '</div>';
-    }
-
-    ?>
+ 
     <?= $pageContent ?>
+   
     <?php
     require_once 'footer_html.php';
     ?>

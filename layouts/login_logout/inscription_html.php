@@ -2,6 +2,14 @@
 
     <div class="bg-white shadow-lg rounded-lg w-full max-w-md mx-4 p-6 sm:p-8">
         <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-6">Créer un compte</h1>
+        <?php
+        if (!empty($errors)) {
+            echo '<div style=" background:red; text-align:center; color:white; padding:2px 8px; font-size:25px;">'
+                . reset($errors) .
+                '</div>';
+        }
+
+        ?>
         <form action="#" method="POST" class="space-y-5">
 
             <!-- Nom / Prénom -->

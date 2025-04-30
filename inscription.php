@@ -7,13 +7,13 @@ if (isset($_POST['register'])) {
     $errors = [];
 
     // Prenom-------------------------------
-    if (empty($_POST['prenom']) || preg_match("#^[a-zA-Z0-9_]+$#", $_POST['prenom'])) {
+    if (empty($_POST['prenom']) || strlen($_POST['prenom']) < 3 || strlen($_POST['prenom']) > 20 ) {
 
         $errors['prenom'] = "prenom non valide";
     }
 
     // Prenom-------------------------------
-    if (empty($_POST['nom']) || preg_match("#^[a-zA-Z0-9_]+$#", $_POST['nom'])) {
+    if (empty($_POST['nom'])  || strlen($_POST['prenom']) < 3 || strlen($_POST['prenom']) > 20  ) {
 
         $errors['nom'] = "nom non valide";
     }
@@ -45,13 +45,13 @@ if (isset($_POST['register'])) {
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
         $req->execute([$_POST['prenom'], $_POST['nom'], $_POST['email'], $password]);
-
+        var_dump($req);
         // On redirige vers la page de login
 
-        // header("Location: login");
+        header("Location: connexion.php");
         exit();
-    }
-}
+    } 
+} 
 
 
 
