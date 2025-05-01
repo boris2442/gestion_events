@@ -31,7 +31,7 @@
                     </svg>
                 </span>
                 <p class="text-gray-700 text-sm sm:text-base">
-                    <strong>Adresse :</strong> 123 Rue de l'Entreprise, 75001 Cameroun, Bastos
+                    <strong>Adresse :</strong> 123 Rue de l'Entreprise, 75001 Cameroun, Bafoussam
                 </p>
             </div>
         </div>
