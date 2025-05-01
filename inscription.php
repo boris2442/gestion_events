@@ -12,7 +12,7 @@ if (isset($_POST['register'])) {
         $errors['prenom'] = "prenom non valide";
     }
 
-    // Prenom-------------------------------
+    // nom-------------------------------
     if (empty($_POST['nom'])  || strlen($_POST['prenom']) < 3 || strlen($_POST['prenom']) > 20  ) {
 
         $errors['nom'] = "nom non valide";
