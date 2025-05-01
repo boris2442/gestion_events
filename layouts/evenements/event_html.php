@@ -45,13 +45,12 @@
         </a>
 
         <!-- S’inscrire -->
-        <form  method="POST" class="inline-block">
-          <input type="hidden" name="event_id" value="<?= htmlspecialchars($event['id_evenement']) ?>">
-          <button type="submit"
-                  class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
-            S’inscrire
-          </button>
-        </form>
+        <form method="POST" class="inline-block">
+    <input type="hidden" name="event_id" value="<?= htmlspecialchars($event['id_evenement']) ?>">
+    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+        S’inscrire
+    </button>
+</form>
 
         <!-- Voir les participants -->
         <a href="participants.php?event_id=<?= urlencode($event['id_evenement']) ?>"
