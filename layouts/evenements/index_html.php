@@ -23,7 +23,7 @@
         <!-- Image -->
         <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
             <img
-                src='gestion_evenements/assets/hero-image.jpg'
+                src='layouts/assets/hero-image.jpg'
                 alt="Illustration événements"
                 class="w-full h-auto rounded-lg shadow-lg object-cover" />
         </div>

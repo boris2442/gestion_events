@@ -7,7 +7,6 @@ if (isset($_SESSION['users']['id']) && $_SESSION['users']['id'] > 0) {
     $sql = $db->prepare("SELECT * FROM `utilisateurs` WHERE id=?");
     $sql->execute([$_SESSION['users']['id']]);
     $user = $sql->fetch();
-    var_dump($user);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors = [];
@@ -41,6 +40,9 @@ if (isset($_SESSION['users']['id']) && $_SESSION['users']['id'] > 0) {
             } else {
                 $password = password_hash($_POST['password'], PASSWORD_ARGON2ID);
             }
+        } else {
+            // Si aucun mot de passe n'est fourni, conserver l'ancien mot de passe
+            $password = $user['password'];
         }
 
         // Si aucune erreur, mise à jour dans la base de données
@@ -54,7 +56,7 @@ if (isset($_SESSION['users']['id']) && $_SESSION['users']['id'] > 0) {
             $requete->bindParam(':id', $_SESSION['users']['id'], PDO::PARAM_INT);
 
             if ($requete->execute()) {
-                header('location:index.php');
+                header('location:event.php');
                 exit();
             } else {
                 $errors['sql'] = "Une erreur est survenue lors de la mise à jour.";
