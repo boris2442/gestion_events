@@ -8,7 +8,7 @@
         <!-- <p class="text-sm text-gray-500 italic mb-2">Publié le : <?= $event['id_utilisateur'] ?></p> -->
 
         <p class="text-sm text-gray-500 mb-6">Mis à jour le : <?= $event['updated_at'] ?></p>
-        <p class="text-sm text-gray-500 italic mb-2">Publié par : <?= htmlspecialchars($event['prenom'] . ' ' . $event['nom']) ?></p>
+       
         <a href="event" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
             Retour
         </a>

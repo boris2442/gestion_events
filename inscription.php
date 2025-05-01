@@ -46,6 +46,13 @@ if (isset($_POST['register'])) {
 
         $req->execute([$_POST['prenom'], $_POST['nom'], $_POST['email'], $password]);
         var_dump($req);
+        //creer une session pour enregistrer les donnees de  l'utilisateur
+        $_SESSION['user_register'] = [
+            'id' => $db->lastInsertId(),
+            'prenom' => $_POST['prenom'],
+            'nom' => $_POST['nom'],
+            'email' => $_POST['email']
+        ];
         // On redirige vers la page de login
 
         header("Location: connexion.php");
