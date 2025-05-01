@@ -29,10 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'id' => $user['id'],
                 'prenom' => $user['prenom'],
                 'nom' => $user['nom'],
-                'email' => $user['email']
+                'email' => $user['email'],
+                'roles' => $user['roles']
             ];
-            header("Location: index.php");
-            exit();
+            //rediriger a la page anmin si l utilisateur a pour role admin
+            if ($_SESSION['users']['roles']) {
+                header('location:admin.php');
+            } else {
+
+                header("Location: index.php");
+                exit();
+            }
         } else {
             $errors['login'] = "Identifiants incorrects";
         }

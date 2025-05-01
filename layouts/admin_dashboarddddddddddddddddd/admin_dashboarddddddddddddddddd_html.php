@@ -75,22 +75,28 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <!-- Exemple de ligne -->
+                         <?php
+                         foreach($users as $user):
+                            ?>
                         <tr>
-                            <td class="px-3 py-2 text-center">1</td>
-                            <td class="px-3 py-2 text-center">Dupont</td>
-                            <td class="px-3 py-2 text-center">Alice</td>
-                            <td class="px-3 py-2 text-center">alice@mail.com</td>
+                            <td class="px-3 py-2 text-center"><?= $user['id']?></td>
+                            <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['nom']) ?></td>
+                            <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['prenom']) ?></td>
+                            <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['email']) ?></td>
                             <td class="px-3 py-2 text-center">
-                                <button class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">
+                                <a href="update_dashbord_users?id=<?= $user['id']?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">
                                     Modifier
-                                </button>
+                                </a>
                             </td>
                             <td class="px-3 py-2 text-center">
-                                <a href="delete.php" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">
+                                <a href="delete_dashbord?id=<?= $user['id']?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')" ; >
                                     Supprimer
                                 </a>
                             </td>
                         </tr>
+                        <?php
+                         endforeach;
+                         ?>
                     </tbody>
                 </table>
             </div>
