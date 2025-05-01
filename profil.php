@@ -2,11 +2,11 @@
 session_start();
 require_once 'database/database.php';
 // 1. Afficher le titre de la page
-$pageTitle = "Gestion des événements";
+$pageTitle = "profil – EventPro";
 // 2. Début du tampon de la page de sortie
 ob_start();
 // 3. Inclure le fichier de configuration ou le fichier de la page d'accueil
-require_once 'layouts/evenements/create_html.php';
+require_once 'layouts/profil/profil.php';
 // 4. Récupération du contenu du tampon dans la page de sortie
 $pageContent = ob_get_clean();
 // 5. Inclure le layout de la page de sortie
