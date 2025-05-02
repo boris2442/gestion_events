@@ -22,10 +22,12 @@ if (isset($_POST["inscription_event"])) {
         $insert_query = "INSERT INTO inscriptions (id_utilisateur, id_evenement) VALUES (?, ?)";
         $stmt = $db->prepare($insert_query);
         if ($stmt->execute([$user_id, $event_id])) {
-            echo "Inscription réussie !";
+            // echo "Inscription réussie !";
             ?>
             <script>
                 alert('vous avez ete inscrire avec sucess');
+                //redirection apres l arlete vers la page event.php
+                window.location.href = 'event.php'; // Rediriger vers la page des événements
             </script>
             <?php
             // header("Location: event.php");
