@@ -9,7 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="layouts/assets/logo_event.png" />
+    <link rel="icon" type="image/png"   href="layouts/assets/logo_event.png" />
     <meta name="description" content="Créez et animez votre communauté d’événements : billetterie, chat en direct, notifications personnalisées et retours participants." />
 
     <title>Plateforme Événementielle <?= htmlspecialchars($pageTitle) ?></title>
@@ -60,7 +60,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div id="mobile-menu" class="fixed inset-0 bg-white bg-opacity-90 backdrop-blur-md z-40 transform transition-transform duration-300 translate-x-full md:hidden">
         <div class="pt-24 px-6 space-y-4 text-center">
             <a href="index" class="block text-lg font-medium text-indigo-700 hover:underline">Accueil</a>
-            <a href="event" class="block text-lg font-medium text-gray-700 hover:underline">Événements</a>
+            <a href="event.php" class="block text-lg font-medium text-gray-700 hover:underline">Événements</a>
             <a href="create" class="block text-lg font-medium text-gray-700 hover:underline">Créer</a>
             <a href="profil" class="block text-lg font-medium text-gray-700 hover:underline">Mon Profil</a>
             <a href="contact" class="block text-lg font-medium text-gray-700 hover:underline">Contact</a>
@@ -69,7 +69,9 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
     </div>
 
-    <?= $pageContent ?>
+    <?=
+    $pageContent
+    ?>
 
     <?php require_once 'footer_html.php'; ?>
 
