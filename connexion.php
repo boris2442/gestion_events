@@ -33,8 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'roles' => $user['roles']
             ];
             //rediriger a la page anmin si l utilisateur a pour role admin
-            if ($_SESSION['users']['roles']) {
+            if ($_SESSION['users']['roles']==='admin') {
                 header('location:admin.php');
+                exit();
             } else {
 
                 header("Location: index.php");
