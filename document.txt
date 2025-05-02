@@ -1,0 +1,10 @@
+RewriteEngine on
+ErrorDocument 404 http://localhost/gestion_evenements/404.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+# RewriteCond %{REQUEST_METHOD} !=POST
+# RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+# RewriteRule ^ /%1 [NC,L]
+
+
+les lignes de codes commentes ne seront plus utilises dans les autre projets
