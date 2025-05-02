@@ -6,11 +6,11 @@ require_once 'database/database.php';
 if (
     isset(
         $_SESSION['users']['id']
-        // , $_SESSION['users']['roles']
+
     ) && $_SESSION['users']['id'] > 0
-    //  && $_SESSION['users']['roles'] === 'admin'
+
 ) {
-    // Récupérer les informations des utilisateurs
+
     $sql = $db->prepare("SELECT id, prenom, nom, email, roles FROM `utilisateurs`");
     $sql->execute();
     $users = $sql->fetchAll(PDO::FETCH_ASSOC);

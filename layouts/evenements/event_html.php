@@ -23,10 +23,10 @@ session_start();
 
         <!-- S’inscrire -->
         <form method="POST" class="inline-block" action="inscription_event.php">
-          <input type="" name="user_id" value="<?= $_SESSION['users']['id'] ?>">
-          <input type="" name="event_id" value="<?= $event['id_evenement'] ?>">
-          <input type="text" name="capacity">
-          <input type="submit" name="ok" value="S'inscrire" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"/>
+          <input type="hidden" name="user_id" value="<?= $_SESSION['users']['id'] ?>">
+          <input type="hidden" name="event_id" value="<?= $event['id_evenement'] ?>">
+        
+          <input type="submit" name="inscription_event" value="S'inscrire" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"/>
  
 
         </form>
