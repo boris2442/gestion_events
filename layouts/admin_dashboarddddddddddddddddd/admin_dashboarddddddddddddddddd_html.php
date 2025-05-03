@@ -75,28 +75,28 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <!-- Exemple de ligne -->
-                         <?php
-                         foreach($users as $user):
-                            ?>
-                        <tr>
-                            <td class="px-3 py-2 text-center"><?= $user['id']?></td>
-                            <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['nom']) ?></td>
-                            <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['prenom']) ?></td>
-                            <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['email']) ?></td>
-                            <td class="px-3 py-2 text-center">
-                                <a href="update_dashbord_users?id=<?= $user['id']?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">
-                                    Modifier
-                                </a>
-                            </td>
-                            <td class="px-3 py-2 text-center">
-                                <a href="delete_dashbord?id=<?= $user['id']?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')" ; >
-                                    Supprimer
-                                </a>
-                            </td>
-                        </tr>
                         <?php
-                         endforeach;
-                         ?>
+                        foreach ($users as $user):
+                        ?>
+                            <tr>
+                                <td class="px-3 py-2 text-center"><?= $user['id'] ?></td>
+                                <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['nom']) ?></td>
+                                <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['prenom']) ?></td>
+                                <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['email']) ?></td>
+                                <td class="px-3 py-2 text-center">
+                                    <a href="update_dashbord_users?id=<?= $user['id'] ?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">
+                                        Modifier
+                                    </a>
+                                </td>
+                                <td class="px-3 py-2 text-center">
+                                    <a href="delete_dashbord?id=<?= $user['id'] ?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')" ;>
+                                        Supprimer
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php
+                        endforeach;
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -145,10 +145,10 @@
                     </div>
                     <!-- Bouton -->
                     <div>
-                        <button type="submit" name="create"
-                            class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
-                            Ajouter
-                        </button>
+                        <input type="submit" name="create_event_dashbord"
+                            class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition" value="Ajouter" />
+
+
                     </div>
                 </form>
             </div>
