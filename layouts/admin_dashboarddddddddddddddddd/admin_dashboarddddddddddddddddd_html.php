@@ -22,7 +22,7 @@
             <!-- Formulaire de création -->
             <div class="bg-white rounded-lg shadow p-4 md:p-6 mb-8">
                 <h3 class="text-xl font-medium mb-4">Créer un nouvel utilisateur</h3>
-                <form method="POST" action="create_users_dashbord.php" class="space-y-5" >
+                <form method="POST" action="create_users_dashbord.php" class="space-y-5">
                     <!-- title -->
                     <div>
                         <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">nom</label>
@@ -158,7 +158,7 @@
                 <h3 class="text-xl font-medium mb-4">Liste des événements</h3>
                 <table class="min-w-full divide-y divide-gray-200 text-sm">
                     <thead class="bg-gray-50">
-                        <tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
                             <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase">ID</th>
                             <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase">Titre</th>
                             <th class="px-3 py-2 text-left font-medium text-gray-500 uppercase hidden sm:table-cell">Date</th>
@@ -166,19 +166,21 @@
                             <th class="px-3 py-2 text-center font-medium text-gray-500 uppercase">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        <!-- Exemple de ligne -->
-                        <tr>
-                            <td class="px-3 py-2">101</td>
-                            <td class="px-3 py-2">Atelier JS</td>
-                            <td class="px-3 py-2 hidden sm:table-cell">2025-05-15</td>
-                            <td class="px-3 py-2 hidden md:table-cell">30</td>
-                            <td class="px-3 py-2 text-center space-x-1">
-                                <button class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">Modifier</button>
-                                <button class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs">Supprimer</button>
-                            </td>
-                        </tr>
+                    <tbody class=" divide-y divide-gray-200">
+                        <?php foreach ($events as $event): ?>
+                            <tr class="odd:bg-red-100 even:bg-blue-100 hover:bg-gray-100 transition duration-200 cursor-pointer">
+                                <td class="px-3 py-2"><?= $event['id_evenement'] ?></td>
+                                <td class="px-3 py-2"><?= $event['titre'] ?></td>
+                                <td class="px-3 py-2 hidden sm:table-cell"><?= $event['created_at'] ?></td>
+                                <td class="px-3 py-2 hidden md:table-cell"><?= $event['capacity'] ?></td>
+                                <td class="px-3 py-2 text-center space-x-1">
+                                    <a href="" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">Modifier</a>
+                                    <a href="delete_event_dashbord.php?id=<?=$event['id_evenement'] ?>" class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs">Supprimer</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
+
                 </table>
             </div>
         </section>

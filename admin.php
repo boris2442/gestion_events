@@ -18,6 +18,16 @@ if (
     header('location:index.php');
     exit();
 }
+//recuperation de tous les evenements pour afficher
+
+//recuperation des articles dans la datyabase...
+$sql = "SELECT * FROM evenements ORDER BY created_at DESC ";
+$query = $db->prepare($sql);
+$query->execute();
+$events = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 
 // Chargement de la vue
 ob_start();
