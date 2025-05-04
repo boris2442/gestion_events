@@ -22,7 +22,7 @@
             <!-- Formulaire de création -->
             <div class="bg-white rounded-lg shadow p-4 md:p-6 mb-8">
                 <h3 class="text-xl font-medium mb-4">Créer un nouvel utilisateur</h3>
-                <form method="POST" class="space-y-5">
+                <form method="POST" class="space-y-5" action="create_users_dashbord.php">
                     <!-- title -->
                     <div>
                         <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">nom</label>

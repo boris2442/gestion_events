@@ -7,7 +7,7 @@ if (
     isset(
         $_SESSION['users']['id']
 
-    ) && $_SESSION['users']['id'] > 0
+    ) && $_SESSION['users']['id'] > 0 &&  $_SESSION['users']['roles'] === 'admin'
 
 ) {
 
