@@ -78,7 +78,7 @@
                         <?php
                         foreach ($users as $user):
                         ?>
-                            <tr>
+                            <tr class="odd:bg-red-100 even:bg-blue-100 hover:bg-gray-100 transition duration-200 cursor-pointer">
                                 <td class="px-3 py-2 text-center"><?= $user['id'] ?></td>
                                 <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['nom']) ?></td>
                                 <td class="px-3 py-2 text-center"><?= htmlspecialchars($user['prenom']) ?></td>
