@@ -89,7 +89,8 @@
                                     </a>
                                 </td>
                                 <td class="px-3 py-2 text-center">
-                                    <a href="delete_dashbord?id=<?= $user['id'] ?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')" ;>
+                                    <a href="delete_dashbord?id=<?= $user['id'] ?>" class="px-2 py-1 bg-red-600
+hover:bg-red-700 text-white rounded  transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')" ;>
                                         Supprimer
                                     </a>
                                 </td>
@@ -175,7 +176,7 @@
                                 <td class="px-3 py-2 hidden md:table-cell"><?= $event['capacity'] ?></td>
                                 <td class="px-3 py-2 text-center space-x-1">
                                     <a href="" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">Modifier</a>
-                                    <a href="delete_event_dashbord.php?id=<?=$event['id_evenement'] ?>" class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs">Supprimer</a>
+                                    <a href="delete_event_dashbord.php?id=<?= $event['id_evenement'] ?>" class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')">Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

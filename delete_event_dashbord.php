@@ -4,16 +4,14 @@ require_once 'database/database.php';
 
 
 // 3-Définit le titre de la page
-$pageTitle = "supprimer un utilisateurs";
+$pageTitle = "supprimer un evenement";
 
 //supprimer un article
 if(isset($_GET)){
  
     $id=$_GET['id'];
-    echo "<pre>";
-    var_dump($id);
-    echo "</pre>";
-    $sql="DELETE FROM  `utilisateurs` WHERE id=:id";
+   
+    $sql="DELETE FROM  `evenements` WHERE id_evenement=:id";
     $query=$db->prepare($sql);
     $query->bindParam('id', $id);
     $query->execute();
