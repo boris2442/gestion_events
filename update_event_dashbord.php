@@ -22,6 +22,16 @@ if ($_SESSION['users']['roles'] === 'admin') {
         } else {
             $errors['id'] = "Aucun événement trouvé avec cet ID.";
         }
+        if($_POST['update_event_dashbord']){
+          if(strlen($_POST['title'])<3 || empty($_POST['title'])|| strlen($_POST['title'])>50)  {
+            $errors['title']='pseudo invalide';
+          }
+        }
+        if($_POST['update_event_dashbord']){
+          if(strlen($_POST['description'])<3 || empty($_POST['description'])|| strlen($_POST['description'])>450)  {
+            $errors['description']='pseudo invalide';
+          }
+        }
     }
 }
 
