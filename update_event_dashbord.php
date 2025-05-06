@@ -1,21 +1,27 @@
 <?php
 session_start();
 require_once 'database/database.php';
-$errors=[];
+$errors = [];
 //verifier que l utilisateur est un administrateur
-if($_SESSION['users']['roles']==='admin'){
-    if(isset($_GET['id'])){
-      $id_event=$_GET['id'];
-      var_dump($id_event);
-      $sql="SELECT*FROM `evenements` WHERE id_evenement=:id_event";
-      $requete=$db->prepare($sql);
-      $requete->bindParam(':id_event', $id_event);
-      $requete->execute();
-      echo '<pre>';
-      var_dump($id_event);
-      echo '</pre>';
-      $result=$requete->fetchAll(PDO::FETCH_ASSOC);
-      
+if ($_SESSION['users']['roles'] === 'admin') {
+    if (isset($_GET['id'])) {
+        $id_event = $_GET['id'];
+        var_dump($id_event);
+        $sql = "SELECT*FROM `evenements` WHERE id_evenement=:id_event";
+        $requete = $db->prepare($sql);
+        $requete->bindParam(':id_event', $id_event);
+        $requete->execute();
+        echo '<pre>';
+        var_dump($id_event);
+        echo '</pre>';
+        $result = $requete->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            echo '<pre>';
+            var_dump($result['titre']);
+            echo '</pre>';
+        } else {
+            $errors['id'] = "Aucun événement trouvé avec cet ID.";
+        }
     }
 }
 
