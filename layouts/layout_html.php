@@ -24,6 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <div class="flex justify-between h-16">
                 <!-- Logo + liens -->
                 <div class="flex items-center space-x-8">
+                    <img src="layouts/assets/logo_event.png" alt="logo" height="40px" width="40px" class="rounded-full">
                     <a href="index.php" class="text-xl font-bold">EventPro</a>
                     <div class="hidden md:flex space-x-6">
                         <?php if (isset($_SESSION['users']['id'])) { ?>
