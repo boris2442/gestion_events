@@ -6,7 +6,7 @@
                 class="w-full md:flex-1 text-center py-4 text-lg font-medium text-gray-700 hover:text-blue-600 transition border-b md:border-b-0 md:border-r border-gray-200">
                 Utilisateurs
             </a>
-            <a href="#events"
+            <a href="#events."
                 class="w-full md:flex-1 text-center py-4 text-lg font-medium text-gray-700 hover:text-blue-600 transition">
                 Événements
             </a>
@@ -22,7 +22,7 @@
             <!-- Formulaire de création -->
             <div class="bg-white rounded-lg shadow p-4 md:p-6 mb-8">
                 <h3 class="text-xl font-medium mb-4">Créer un nouvel utilisateur</h3>
-                <form method="POST" action="create_users_dashbord.php" class="space-y-5">
+                <form method="POST" action="create_users_dashbord" class="space-y-5">
                     <!-- title -->
                     <div>
                         <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">nom</label>
@@ -175,8 +175,8 @@ hover:bg-red-700 text-white rounded  transition text-xs" onClick="return confirm
                                 <td class="px-3 py-2 hidden sm:table-cell"><?= $event['created_at'] ?></td>
                                 <td class="px-3 py-2 hidden md:table-cell"><?= $event['capacity'] ?></td>
                                 <td class="px-3 py-2 text-center space-x-1">
-                                    <a href="update_event_dashbord.php?id=<?=$event['id_evenement'] ?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">Modifier</a>
-                                    <a href="delete_event_dashbord.php?id=<?= $event['id_evenement'] ?>" class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')">Supprimer</a>
+                                    <a href="update_event_dashbord?id=<?=$event['id_evenement'] ?>" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs">Modifier</a>
+                                    <a href="delete_event_dashbord?id=<?= $event['id_evenement'] ?>" class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-xs" onClick="return confirm('Voulez-vous vraiment supprimer cet article ?')">Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

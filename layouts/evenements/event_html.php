@@ -1,7 +1,13 @@
 <?php
 session_start();
 require_once 'database/database.php';
-
+// Fonction pour vérifier le nombre de participants inscrits
+function getParticipantCount($db, $eventId)
+{
+    $stmt = $db->prepare("SELECT COUNT(*) FROM inscriptions WHERE id_evenement = ?");
+    $stmt->execute([$eventId]);
+    return $stmt->fetchColumn();
+}
 // Fonction pour vérifier l'inscription
 function isUserRegistered($db, $userId, $eventId)
 {
@@ -28,14 +34,14 @@ $userId = $_SESSION['users']['id'];
             </p>
             <div class="flex flex-wrap items-center gap-3">
                 <!-- Voir plus… -->
-                <a href="evenement.php?id=<?= urlencode($eventId) ?>"
+                <a href="evenement?id=<?= urlencode($eventId) ?>"
                     class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                     Voir plus…
                 </a>
 
                 <?php if ($registered): ?>
                     <!-- Se désabonner -->
-                    <form method="POST" action="desinscription_event.php" class="inline-block">
+                    <form method="POST" action="desinscription_event" class="inline-block">
                         <input type="hidden" name="user_id" value="<?= $userId ?>">
                         <input type="hidden" name="event_id" value="<?= $eventId ?>">
                         <input type="submit" name="desinscription_event" value="Se désabonner"
@@ -43,7 +49,7 @@ $userId = $_SESSION['users']['id'];
                     </form>
                 <?php else: ?>
                     <!-- S’inscrire -->
-                    <form method="POST" action="inscription_event.php" class="inline-block">
+                    <form method="POST" action="inscription_event" class="inline-block">
                         <input type="hidden" name="user_id" value="<?= $userId ?>">
                         <input type="hidden" name="event_id" value="<?= $eventId ?>">
                         <input type="submit" name="inscription_event" value="S'inscrire"
@@ -52,7 +58,7 @@ $userId = $_SESSION['users']['id'];
                 <?php endif; ?>
 
                 <!-- Voir les participants -->
-                <a href="participants.php?event_id=<?= urlencode($eventId) ?>"
+                <a href="participants?event_id=<?= urlencode($eventId) ?>"
                     class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
                     Voir les participants
                 </a>
